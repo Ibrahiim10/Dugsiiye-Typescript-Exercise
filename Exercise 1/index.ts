@@ -24,4 +24,20 @@ console.log(getDiscount(100, 0.5));
 
 // #3 Dangerous any – Fixing It Safely
 
+// The problem with any
+// printLength("Hello");
+// printLength(123);    
+
+// function printLength(x: any) {
+//   console.log(x.length);
+// }
+
+
+function printLength(x: unknown) {
+  if (typeof x === "string")
+    console.log(x.length);
+}
+
+printLength("Hello"); 
+printLength(123);     
 
